@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  sparks:
+    build: ./sparks
+    ports:
+    - "8890:8890"
+    - "8891:8891"
+  volumes:
+      - type: volume
+        source: sparks
+        target: /sparks
