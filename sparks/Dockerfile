@@ -42,8 +42,8 @@ WORKDIR ${HOME}
 ADD ./bin /usr/local/bin
 add ./conf ${HOME}/.${COINFOLDER}
 
-RUN "echo rpcuser=`dd if=/dev/urandom bs=33 count=1 2>/dev/null | base64` >> ${HOME}/.${COINFOLDER}/${COMPONENT}.conf"
-RUN "echo rcpassword=`dd if=/dev/urandom bs=33 count=1 2>/dev/null | base64` >> ${HOME}/.${COINFOLDER}/${COMPONENT}.conf"
+RUN echo rpcuser=`dd if=/dev/urandom bs=33 count=1 2>/dev/null | base64` >> ${HOME}/.${COINFOLDER}/${COMPONENT}.conf
+RUN echo rcpassword=`dd if=/dev/urandom bs=33 count=1 2>/dev/null | base64` >> ${HOME}/.${COINFOLDER}/${COMPONENT}.conf
 
 
 ENTRYPOINT ["docker-entrypoint.sh"]
